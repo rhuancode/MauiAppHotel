@@ -4,17 +4,20 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False"
-             Background="{StaticResource Gray100}">
+             Background="{StaticResource White}">
 
-    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+    <VerticalStackLayout VerticalOptions="Fill"
                          Padding="10">
         <Label 
             Text="Cálculo da Diária"
             FontFamily="PlayfairDisplayVariableFontwght"
-            FontSize="45"
-            TextColor="{StaticResource Primary}"/>
+            FontSize="38"
+            TextColor="{StaticResource Green}"
+            HorizontalTextAlignment="Center"
+            Margin="0,0,0,10"/>
 
-        <Frame Padding="10">
+        <Frame Padding="10"
+               BackgroundColor="{StaticResource Gray950}">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
@@ -26,7 +29,7 @@
                            Text="Crianças:"/>
 
                     <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
+                           TextColor="{StaticResource Green}"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_adultos}"/>
 
@@ -34,10 +37,11 @@
                              x:Name="stp_adultos"
                              Minimum="0"
                              Maximum="10"
-                             Increment="1"/>
+                             Increment="1"
+                             BackgroundColor="{StaticResource Green}"/>
 
                     <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
+                           TextColor="{StaticResource Green}"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_criancas}"/>
 
@@ -45,41 +49,66 @@
                              x:Name="stp_criancas"
                              Minimum="1"
                              Maximum="10"
-                             Increment="1"/>
+                             Increment="1"
+                             BackgroundColor="{StaticResource Green}"/>
                 </Grid>
 
-                <Label Text="Escolha sua Suíte"/>
+                <Label Text="Escolha sua Suíte"
+                       Margin="0,25,0,5"/>
 
                 <Picker x:Name="pck_quarto"
                         Title="Selecione sua Acomodação"/>
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="{StaticResource Gray950}">
                     <VerticalStackLayout>
-                        <Label Text="Período de Estadia"/>
+                        <Label Text="Período de Estadia"
+                               Margin="0,0,0,10"/>
 
                         <!-- Check-in -->
                         <HorizontalStackLayout>
-                            <Label Text="Check-in:"/>
+                            <Label Text="Check-in:"
+                                   Margin="0,0,15,0"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"
+                                        Margin="0,0,0,10"/>
                         </HorizontalStackLayout>
 
                         <!-- Check-out -->
                         <HorizontalStackLayout>
-                            <Label Text="Check-out:"/>
+                            <Label Text="Check-out:"
+                                   Margin="0,0,5,0"/>
                             <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar"/>
+                <Button Text="Avançar"
+                        BackgroundColor="{StaticResource Green}"
+                        TextColor="{StaticResource White}"/>
 
             </VerticalStackLayout>
         </Frame>
         <!-- Como o Frame só aceita um elemento dentro, foi inserido o VerticalStackLayout que aceita vários elementos. -->
         
+        <!-- Opção Sobre -->
+
+
+        <Label Text="Sobre"
+               TextColor="{StaticResource Green}"
+               TextDecorations="Underline"
+               FontFamily="PlayfairDisplayVariableFontwght"
+               FontSize="20"
+               HorizontalOptions="Center"
+               Margin="0,50,0,0">
+
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSobreTapped"/>
+            </Label.GestureRecognizers>
+
+        </Label>
     </VerticalStackLayout>
 
 </ContentPage>
@@ -89,4 +118,5 @@
     . ColumnDefinitions="*, *, 2*" - o 2* é para que a terceira coluna tenha uma largura maior.
     . Grid.Row="0" Grid.Column="0" - Linha 0 Coluna 0 
     . BindingContext - uma das traduções é "Amarração". Podemos amarrar um arquivo .xaml em um arquivo .cs ou um amarrar um componente no outro.
+    . OnSobreTapped - nome do método criado.
         -->

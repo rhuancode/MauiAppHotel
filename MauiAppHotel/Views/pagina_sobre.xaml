@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.pagina_sobre"
+             Title="pagina_sobre"
+             NavigationPage.HasNavigationBar="False"
+             Background="{StaticResource Gray100}">
+
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+
+        <Label 
+            Text="Sobre"
+            HorizontalTextAlignment="Center"
+            FontFamily="PlayfairDisplayVariableFontwght"
+            FontSize="40"
+            TextColor="{StaticResource Green}"/>
+
+        <Frame Padding="10"
+               Margin="10"
+               BackgroundColor="{StaticResource Gray900}">
+            <HorizontalStackLayout>
+                <Label Text="Desenvolvedor: Rhuan -" Margin="5"
+                       TextColor="{StaticResource Green}"/>
+                <Label Text="Ano: 2026" Margin="5"
+                       TextColor="{StaticResource Green}"/>
+            </HorizontalStackLayout>
+        </Frame>
+        
+    </VerticalStackLayout>
+</ContentPage>
