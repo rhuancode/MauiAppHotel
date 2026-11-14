@@ -57,7 +57,8 @@
                        Margin="0,25,0,5"/>
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"/>
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame Padding="10"
                        Margin="10"
@@ -71,6 +72,7 @@
                             <Label Text="Check-in:"
                                    Margin="0,0,15,0"/>
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy"
                                         Margin="0,0,0,10"/>
                         </HorizontalStackLayout>
@@ -85,17 +87,17 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar"
+                <Button Text="Avançar" Clicked="Button_Clicked"
                         BackgroundColor="{StaticResource Green}"
-                        TextColor="{StaticResource White}"/>
-
+                        TextColor="{StaticResource White}"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"/>
             </VerticalStackLayout>
         </Frame>
+
         <!-- Como o Frame só aceita um elemento dentro, foi inserido o VerticalStackLayout que aceita vários elementos. -->
         
         <!-- Opção Sobre -->
-
-
         <Label Text="Sobre"
                TextColor="{StaticResource Green}"
                TextDecorations="Underline"
@@ -119,4 +121,5 @@
     . Grid.Row="0" Grid.Column="0" - Linha 0 Coluna 0 
     . BindingContext - uma das traduções é "Amarração". Podemos amarrar um arquivo .xaml em um arquivo .cs ou um amarrar um componente no outro.
     . OnSobreTapped - nome do método criado.
+    . DateSelected="dtpck_checkin_DateSelected" - evento disparado toda vez que for criado um check-in
         -->

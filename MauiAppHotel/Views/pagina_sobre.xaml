@@ -26,6 +26,11 @@
                        TextColor="{StaticResource Green}"/>
             </HorizontalStackLayout>
         </Frame>
+
+        <Button Text="Voltar" Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="{StaticResource Green}"
+                TextColor="{StaticResource White}"/>
         
     </VerticalStackLayout>
 </ContentPage>

@@ -6,4 +6,15 @@ public partial class HospedagemContratada : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		try
+		{
+			Navigation.PopAsync();
+		} catch (Exception ex)
+		{
+			DisplayAlertAsync("Ops", ex.Message, "Ok");
+		}
+    }
 }
